@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student List</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #185a9d;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    thead {
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: white;
+    }
+    th, td {
+      padding: 12px 20px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    tbody tr:hover {
+      background-color: #f1f9f8;
+    }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tbody tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+      }
+      tbody td {
+        border: none;
+        padding-left: 50%;
+        position: relative;
+        text-align: right;
+      }
+      tbody td::before {
+        position: absolute;
+        top: 12px;
+        left: 20px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: 600;
+        content: attr(data-label);
+        text-align: left;
+        color: #185a9d;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Student List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>status</th>
+        <th>result</th>
+        <th>grade</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Student ID"></td>
+        <td data-label="Name"></td>
+        <td data-label="Age"></td>
+        <td data-label="Status"></td>
+        <td data-label="result"></td>
+        <td data-label="grade"></td>
+        
+      </tr>
+      <tr>
+        <td>{{rollno}}</td>
+        <td>{{fullname}}</td>
+        <td>{{age}}</td>
+        <td>{{status}}</td>
+        <td>{{result}}</td>
+        <td>{{grade}}</td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</body>
+</html>
